@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{py_sitedir}/*.so
-%attr(755,root,root) %{py_sitedir}/*.la
+%{py_sitedir}/*.la
 
 %files devel
 %defattr(644,root,root,755)
