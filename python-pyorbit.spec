@@ -59,7 +59,7 @@ de extensões baseadas no ORBit Python.
 %setup -q -n %{module}-%{version}
 
 %build
-CPPFLAGS="$(libIDL-config --cflags)"; export CPPFLAGS
+CPPFLAGS="$(libIDL-config-2 --cflags)"; export CPPFLAGS
 %configure
 %{__make}
 
