@@ -1,7 +1,3 @@
-
-# todo:
-# - nointernal patch is still required?
-
 %include	/usr/lib/rpm/macros.python
 
 %define		module	pyorbit
@@ -15,8 +11,7 @@ License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/1.99/%{module}-%{version}.tar.bz2
 # Source0-md5:	65c508ddd2d184040bc20e766aced16a
-Patch0:		%{name}-nointernal.patch
-BuildRequires:	ORBit2-devel >= 2.5.0
+BuildRequires:	ORBit2-devel >= 2.7.3
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
@@ -62,7 +57,6 @@ de extensões baseadas no ORBit Python.
 
 %prep
 %setup -q -n %{module}-%{version}
-#%patch -p1
 
 %build
 CPPFLAGS="$(libIDL-config-2 --cflags)"; export CPPFLAGS
