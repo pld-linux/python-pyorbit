@@ -14,7 +14,7 @@ BuildRequires:	ORBit2-devel >= 2.7.3
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
-BuildRequires:	python-devel >= 2.3.2
+BuildRequires:	python-devel >= 1:2.3.2
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
 Obsoletes:	%{module}
