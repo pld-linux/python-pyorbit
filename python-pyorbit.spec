@@ -26,10 +26,18 @@ language bindings more efficient.  This includes:
 - use of the ORBit_small_invoke_stub() call for operation invocation,
   which allows for short circuited invocation on local objects
 
+%description -l pl
+Ten pakiet zawiera wi±zania Pythona do ORBit2 - implementacji CORBA.
+Jego celem jest wykorzystanie wszystkich nowych mo¿liwo¶ci OBRit2, aby
+uczyniæ wi±zania bardziej skutecznymi. Wi±zania umo¿liwiaj±:
+- u¿ycie bibliotek typów ORBit2 do generowania szkieletów
+- u¿ycie wywo³ania ORBit_small_invoke_stub() do ¿±dania operacji,
+  co pozwala na krótkie wywo³ania na lokalnych obiektach.
+
 %package devel
 Summary:	Development files for the ORBit Python module
 Summary(pt_BR):	Arquivos de desenvolvimento para o módulo ORBit Python
-Summary(pl):	Developerskie pliki dla modu³u Pythona ORBit
+Summary(pl):	Pliki programistyczne dla modu³u Pythona ORBit
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
 Requires:	python-devel >= 2.1
@@ -40,7 +48,7 @@ This package contains development files needed to develop ORBit Python
 based extensions.
 
 %description devel -l pl
-Ten pakiet zawiera pliki developerskie potrzebne do rozwijania
+Ten pakiet zawiera pliki programistyczne potrzebne do rozwijania
 rozszerzeñ bazuj±cych na ORBit Python.
 
 %description devel -l pt_BR
