@@ -14,7 +14,6 @@ BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	python-devel >= 1:2.3.2
-BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
 Obsoletes:	%{module}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
