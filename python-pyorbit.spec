@@ -12,6 +12,7 @@ License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/1.99/%{module}-%{version}.tar.bz2
 # Source0-md5:	c774b36e7eb54fdb789bb15602050f57
+Patch0:		%{name}-nointernal.patch
 BuildRequires:	ORBit2-devel >= 2.5.0
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
@@ -58,10 +59,12 @@ de extensões baseadas no ORBit Python.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch -p1
 
 %build
 CPPFLAGS="$(libIDL-config-2 --cflags)"; export CPPFLAGS
 %configure
+
 %{__make}
 
 %install
@@ -70,6 +73,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/*.la
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -77,9 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{py_sitedir}/*.so
-%{py_sitedir}/*.la
 
 %files devel
 %defattr(644,root,root,755)
-%{_pkgconfigdir}/*
 %{_includedir}/%{module}*
+%{_pkgconfigdir}/*
