@@ -6,11 +6,11 @@
 Summary:	Python binding for ORBit
 Summary(pl):	Wi±zania Pythona do biblioteki ORBit
 Name:		python-pyorbit
-Version:	1.99.3
+Version:	1.99.4
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/pyorbit/1.99/%{module}-%{version}.tar.gz
+Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/1.99/%{module}-%{version}.tar.bz2
 BuildRequires:	ORBit2-devel >= 2.5.0
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
