@@ -33,7 +33,7 @@ Summary(pl):	Developerskie pliki dla modu³u Pythona ORBit
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
 Requires:	python-devel >= 2.1
-Requires:	ORBit-devel >= 2.5.0
+Requires:	ORBit2-devel >= 2.5.0
 
 %description devel
 This package contains development files needed to develop ORBit Python
