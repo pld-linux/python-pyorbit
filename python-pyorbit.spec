@@ -6,7 +6,7 @@
 Summary:	Python binding for ORBit
 Summary(pl):	Wi±zania Pythona do biblioteki ORBit
 Name:		python-pyorbit
-Version:	1.99.1
+Version:	1.99.3
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
