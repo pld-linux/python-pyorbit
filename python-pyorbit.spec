@@ -6,12 +6,13 @@ Summary:	Python binding for ORBit
 Summary(pl):	Wi±zania Pythona do biblioteki ORBit
 Name:		python-pyorbit
 Version:	2.0.0
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{module}/2.0/%{module}-%{version}.tar.bz2
 # Source0-md5:	084d4c51a6778eaceb5dc52e4c91b98a
 BuildRequires:	ORBit2-devel >= 2.7.3
+BuildRequires:	automake
 BuildRequires:	python-devel >= 2.3.2
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
@@ -39,7 +40,7 @@ Summary:	Development files for the ORBit Python module
 Summary(pt_BR):	Arquivos de desenvolvimento para o módulo ORBit Python
 Summary(pl):	Pliki programistyczne dla modu³u Pythona ORBit
 Group:		Development/Languages/Python
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	ORBit2-devel >= 2.7.3
 Requires:	python-devel >= 2.3.2
 
@@ -59,6 +60,7 @@ de extensões baseadas no ORBit Python.
 %setup -q -n %{module}-%{version}
 
 %build
+cp -f /usr/share/automake/config.* .
 CPPFLAGS="$(libIDL-config-2 --cflags)"; export CPPFLAGS
 %configure
 %{__make}
