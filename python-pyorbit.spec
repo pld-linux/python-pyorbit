@@ -1,4 +1,7 @@
 
+# todo:
+# - nointernal patch is still required?
+
 %include	/usr/lib/rpm/macros.python
 
 %define		module	pyorbit
@@ -6,12 +9,12 @@
 Summary:	Python binding for ORBit
 Summary(pl):	Wi±zania Pythona do biblioteki ORBit
 Name:		python-pyorbit
-Version:	1.99.4
-Release:	1
+Version:	1.99.5
+Release:	0.1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/1.99/%{module}-%{version}.tar.bz2
-# Source0-md5:	c774b36e7eb54fdb789bb15602050f57
+# Source0-md5:	65c508ddd2d184040bc20e766aced16a
 Patch0:		%{name}-nointernal.patch
 BuildRequires:	ORBit2-devel >= 2.5.0
 BuildRequires:	python-devel >= 2.2.1
@@ -59,7 +62,7 @@ de extensões baseadas no ORBit Python.
 
 %prep
 %setup -q -n %{module}-%{version}
-%patch -p1
+#%patch -p1
 
 %build
 CPPFLAGS="$(libIDL-config-2 --cflags)"; export CPPFLAGS
@@ -82,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{py_sitedir}/*.so
+%{py_sitedir}/*.py[co]
 
 %files devel
 %defattr(644,root,root,755)
