@@ -5,12 +5,12 @@
 Summary:	Python binding for ORBit
 Summary(pl):	Wi±zania Pythona do biblioteki ORBit
 Name:		python-pyorbit
-Version:	1.99.6
+Version:	1.99.7
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/1.99/%{module}-%{version}.tar.bz2
-# Source0-md5:	2701ac650a8c15a36f5fce3700ffe8ad
+# Source0-md5:	d8ea2fad04442a37b3ab320d47292f25
 BuildRequires:	ORBit2-devel >= 2.7.3
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
@@ -40,8 +40,8 @@ Summary(pt_BR):	Arquivos de desenvolvimento para o módulo ORBit Python
 Summary(pl):	Pliki programistyczne dla modu³u Pythona ORBit
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}
-Requires:	python-devel >= 2.1
 Requires:	ORBit2-devel >= 2.5.0
+Requires:	python-devel >= 2.1
 
 %description devel
 This package contains development files needed to develop ORBit Python
@@ -61,7 +61,6 @@ de extensões baseadas no ORBit Python.
 %build
 CPPFLAGS="$(libIDL-config-2 --cflags)"; export CPPFLAGS
 %configure
-
 %{__make}
 
 %install
@@ -70,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/*.la
+rm -f $RPM_BUILD_ROOT%{py_sitedir}/{*.la,*.py}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
