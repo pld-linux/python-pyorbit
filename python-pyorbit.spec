@@ -11,6 +11,7 @@ Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/1.99/%{module}-%{version}.tar.bz2
+# Source0-md5:	c774b36e7eb54fdb789bb15602050f57
 BuildRequires:	ORBit2-devel >= 2.5.0
 BuildRequires:	python-devel >= 2.2.1
 BuildRequires:	rpm-pythonprov
