@@ -4,17 +4,18 @@ Summary:	Python binding for ORBit
 Summary(pl):	Wi±zania Pythona do biblioteki ORBit
 Name:		python-pyorbit
 Version:	2.14.0
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/%{module}/2.14/%{module}-%{version}.tar.bz2
 # Source0-md5:	ff62b983d5d9be164bd5a207d692eab5
-BuildRequires:	ORBit2-devel >= 2.14.0
+BuildRequires:	ORBit2-devel >= 1:2.14.0
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	python-devel >= 1:2.3.2
 %pyrequires_eq	python-libs
+Requires:	ORBit2 >= 1:2.14.0
 Obsoletes:	%{module}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,7 +41,7 @@ Summary(pt_BR):	Arquivos de desenvolvimento para o módulo ORBit Python
 Summary(pl):	Pliki programistyczne dla modu³u Pythona ORBit
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	ORBit2-devel >= 2.7.3
+Requires:	ORBit2-devel >= 1:2.14.0
 Requires:	python-devel >= 2.3.2
 
 %description devel
