@@ -1,7 +1,7 @@
 %define		module	pyorbit
 
 Summary:	Python binding for ORBit
-Summary(pl):	Wi±zania Pythona do biblioteki ORBit
+Summary(pl.UTF-8):   WiƒÖzania Pythona do biblioteki ORBit
 Name:		python-pyorbit
 Version:	2.14.1
 Release:	3
@@ -28,18 +28,18 @@ language bindings more efficient.  This includes:
 - use of the ORBit_small_invoke_stub() call for operation invocation,
   which allows for short circuited invocation on local objects
 
-%description -l pl
-Ten pakiet zawiera wi±zania Pythona do ORBit2 - implementacji CORBA.
-Jego celem jest wykorzystanie wszystkich nowych moøliwo∂ci OBRit2, aby
-uczyniÊ wi±zania bardziej skutecznymi. Wi±zania umoøliwiaj±:
-- uøycie bibliotek typÛw ORBit2 do generowania szkieletÛw
-- uøycie wywo≥ania ORBit_small_invoke_stub() do ø±dania operacji,
-  co pozwala na krÛtkie wywo≥ania na lokalnych obiektach.
+%description -l pl.UTF-8
+Ten pakiet zawiera wiƒÖzania Pythona do ORBit2 - implementacji CORBA.
+Jego celem jest wykorzystanie wszystkich nowych mo≈ºliwo≈õci OBRit2, aby
+uczyniƒá wiƒÖzania bardziej skutecznymi. WiƒÖzania umo≈ºliwiajƒÖ:
+- u≈ºycie bibliotek typ√≥w ORBit2 do generowania szkielet√≥w
+- u≈ºycie wywo≈Çania ORBit_small_invoke_stub() do ≈ºƒÖdania operacji,
+  co pozwala na kr√≥tkie wywo≈Çania na lokalnych obiektach.
 
 %package devel
 Summary:	Development files for the ORBit Python module
-Summary(pt_BR):	Arquivos de desenvolvimento para o mÛdulo ORBit Python
-Summary(pl):	Pliki programistyczne dla modu≥u Pythona ORBit
+Summary(pt_BR.UTF-8):   Arquivos de desenvolvimento para o m√≥dulo ORBit Python
+Summary(pl.UTF-8):   Pliki programistyczne dla modu≈Çu Pythona ORBit
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	ORBit2-devel >= 1:2.14.0
@@ -49,13 +49,13 @@ Requires:	python-devel >= 2.3.2
 This package contains development files needed to develop ORBit Python
 based extensions.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Ten pakiet zawiera pliki programistyczne potrzebne do rozwijania
-rozszerzeÒ bazuj±cych na ORBit Python.
+rozszerze≈Ñ bazujƒÖcych na ORBit Python.
 
-%description devel -l pt_BR
-Este pacote contÈm arquivos de desenvolvimento necess·rios ‡ criaÁ„o
-de extensıes baseadas no ORBit Python.
+%description devel -l pt_BR.UTF-8
+Este pacote cont√©m arquivos de desenvolvimento necess√°rios √† cria√ß√£o
+de extens√µes baseadas no ORBit Python.
 
 %prep
 %setup -q -n %{module}-%{version}
