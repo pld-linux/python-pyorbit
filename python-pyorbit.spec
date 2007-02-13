@@ -1,7 +1,7 @@
 %define		module	pyorbit
 
 Summary:	Python binding for ORBit
-Summary(pl.UTF-8):   Wiązania Pythona do biblioteki ORBit
+Summary(pl.UTF-8):	Wiązania Pythona do biblioteki ORBit
 Name:		python-pyorbit
 Version:	2.14.1
 Release:	3
@@ -38,8 +38,8 @@ uczynić wiązania bardziej skutecznymi. Wiązania umożliwiają:
 
 %package devel
 Summary:	Development files for the ORBit Python module
-Summary(pt_BR.UTF-8):   Arquivos de desenvolvimento para o módulo ORBit Python
-Summary(pl.UTF-8):   Pliki programistyczne dla modułu Pythona ORBit
+Summary(pt_BR.UTF-8):	Arquivos de desenvolvimento para o módulo ORBit Python
+Summary(pl.UTF-8):	Pliki programistyczne dla modułu Pythona ORBit
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 Requires:	ORBit2-devel >= 1:2.14.0
