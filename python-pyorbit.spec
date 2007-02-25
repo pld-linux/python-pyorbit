@@ -3,20 +3,20 @@
 Summary:	Python binding for ORBit
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki ORBit
 Name:		python-pyorbit
-Version:	2.14.1
-Release:	3
+Version:	2.14.2
+Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/2.14/%{module}-%{version}.tar.bz2
-# Source0-md5:	a3728affed2aa878966f792ae171e0f0
-BuildRequires:	ORBit2-devel >= 1:2.14.0
+# Source0-md5:	1c66f86f22cbded93eba85791dbb48ef
+BuildRequires:	ORBit2-devel >= 1:2.14.6
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	libtool
 BuildRequires:	python-devel >= 1:2.3.2
 BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-libs
-Requires:	ORBit2 >= 1:2.14.0
+Requires:	ORBit2 >= 1:2.14.6
 Obsoletes:	%{module}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -42,7 +42,7 @@ Summary(pt_BR.UTF-8):	Arquivos de desenvolvimento para o módulo ORBit Python
 Summary(pl.UTF-8):	Pliki programistyczne dla modułu Pythona ORBit
 Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
-Requires:	ORBit2-devel >= 1:2.14.0
+Requires:	ORBit2-devel >= 1:2.14.6
 Requires:	python-devel >= 2.3.2
 
 %description devel
@@ -56,6 +56,18 @@ rozszerzeń bazujących na ORBit Python.
 %description devel -l pt_BR.UTF-8
 Este pacote contém arquivos de desenvolvimento necessários à criação
 de extensões baseadas no ORBit Python.
+
+%package examples
+Summary:	Example programs using Python ORBit2 bindings
+Summary(pl.UTF-8):	Przykładowe programy w Pythonie używające ORBit2
+Group:		Libraries/Python
+Requires:	%{name} = %{version}-%{release}
+
+%description examples
+Example programs using ORBit2 bindings.
+
+%description examples -l pl.UTF-8
+Przykładowe programy w Pythonie używające ORBit2.
 
 %prep
 %setup -q -n %{module}-%{version}
@@ -73,9 +85,12 @@ de extensões baseadas no ORBit Python.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_examplesdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 rm -f $RPM_BUILD_ROOT%{py_sitedir}/{*.la,*.py}
 
@@ -92,3 +107,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/%{module}*
 %{_pkgconfigdir}/*
+
+%files examples
+%defattr(644,root,root,755)
+%{_examplesdir}/%{name}-%{version}
