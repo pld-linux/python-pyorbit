@@ -3,12 +3,12 @@
 Summary:	Python binding for ORBit
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki ORBit
 Name:		python-pyorbit
-Version:	2.14.2
+Version:	2.14.3
 Release:	1
 License:	LGPL
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/gnome/sources/pyorbit/2.14/%{module}-%{version}.tar.bz2
-# Source0-md5:	1c66f86f22cbded93eba85791dbb48ef
+# Source0-md5:	3c4d42ae1a7303fd85071a842617043f
 BuildRequires:	ORBit2-devel >= 1:2.14.6
 BuildRequires:	automake
 BuildRequires:	autoconf
