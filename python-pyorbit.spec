@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Wiązania Pythona do biblioteki ORBit
 Name:		python-pyorbit
 Version:	2.24.0
 Release:	4
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries/Python
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/pyorbit/2.24/%{module}-%{version}.tar.bz2
 # Source0-md5:	574593815e75ee6e98062c75d6d1581f
@@ -18,9 +18,10 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	python-devel >= 1:2.4.0
 BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
 %pyrequires_eq	python-libs
 Requires:	ORBit2 >= 1:2.14.6
-Obsoletes:	%{module}
+Obsoletes:	pyorbit
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -63,7 +64,7 @@ de extensões baseadas no ORBit Python.
 %package examples
 Summary:	Example programs using Python ORBit2 bindings
 Summary(pl.UTF-8):	Przykładowe programy w Pythonie używające ORBit2
-Group:		Libraries/Python
+Group:		Development/Languages/Python
 Requires:	%{name} = %{version}-%{release}
 
 %description examples
@@ -94,7 +95,8 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}
 
 cp -a examples $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-rm -f $RPM_BUILD_ROOT%{py_sitedir}/{*.la,*.py}
+%{__rm} $RPM_BUILD_ROOT%{py_sitedir}/*.la
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -103,7 +105,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{py_sitedir}/ORBit.so
-%{py_sitedir}/*.py[co]
+%{py_sitedir}/CORBA.py[co]
+%{py_sitedir}/PortableServer.py[co]
 
 %files devel
 %defattr(644,root,root,755)
